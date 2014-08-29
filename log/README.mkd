@@ -1,0 +1,9 @@
+# 描述
+该文件夹用于存放系统各部分的日志文件
+
+# 日志等级
+* info 服务器一般记录的日志信息，格式 socketId=*** | other content
+* error 与特定用户有关的错误信息，格式 socketId="***" | other content, error stack
+* alert 与特定用户无关的错误信息，格式 content, other content, error stack
+* notice 服务器运行相关的日志信息
+* emergency 紧急错误，需要及时被处理的错误信息
