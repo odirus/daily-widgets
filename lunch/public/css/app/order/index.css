@@ -1,0 +1,37 @@
+.main-content {
+    margin: 100px auto auto auto;
+}
+
+.welcome-box {
+    font-size: 25px;
+    margin: 20px auto
+}
+
+.user-order-item-template {
+    display: none
+}
+
+.available-menu-item-template {
+    display: none
+}
+
+.user-shopping-cart-item-template {
+    display: none
+}
+
+.new-order-confirm {
+    cursor: default
+}
+
+#change-username-modal {
+    margin-top: 10%
+}
+
+.modal-new-username {
+    margin: auto auto;
+    width: 100%
+}
+
+.submit-box {
+    margin: 20px auto
+}

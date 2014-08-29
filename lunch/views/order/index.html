@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/lib/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/app/order/index.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+	<!--左侧区域-->
+        <div class="col-xs-0 col-md-4">
+        </div>
+	<!--中间区域-->
+	<div class="col-xs-12 col-md-4 main-content">
+          <div class="welcome-box">
+	    Hi, <a class="welcome-change-username var-username" href="#">loding</a>
+	  </div>
+	  <div>
+	    你的订单（已经提交到服务器的订单）
+	    <table class="table table-striped user-order">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>菜名</th>
+                  <th>单价</th>
+                  <th>数量</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="user-order-item-template">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+	  </div>
+	  <div>
+	    可选订餐（服务器上可选的菜单）
+	    <table class="table table-striped available-menu">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>菜名</th>
+                  <th>单价</th>
+		  <th>点餐</th>
+                </tr>
+              </thead>
+              <tbody>
+		<tr class="available-menu-item-template">
+		  <td></td>
+                  <td></td>
+                  <td></td>
+		  <td><a class="new-order-confirm">确定</a></td>
+		</tr>
+	      </tbody>
+            </table>
+	  </div>
+	  <div>
+	    购物车（尚未提交到服务器的订单）
+	    <table class="table table-striped user-shopping-cart">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>菜名</th>
+                  <th>单价</th>
+                  <th>数量</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="user-shopping-cart-item-template">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+	   </div>
+	  <div class="submit-box">
+	    <button type="button" class="btn-block submit-order">把购物车的订单提交到服务器</button>
+	    <button type="button" class="btn-block cancel-order">从服务器上取消我的全部订单</button>
+          </div>
+	</div>
+	<!--右侧区域-->
+        <div class="col-xs-0 col-md-4">
+	</div>
+      </div>
+    </div>
+    <!--修改用户名窗体-->
+    <div id="change-username-modal" class="modal fade">
+      <div class="modal-dialog modal-sm">
+	<div class="modal-content">
+	  <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">姓名不对 ? 输入您的姓名</h4>
+	  </div>
+	  <div class="modal-body">
+            <input type="text" class="modal-new-username" />
+	  </div>
+	  <div class="modal-footer">
+            <button type="button" class="btn btn-primary save-new-username">保存</button>
+	    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	  </div>
+	</div>
+      </div>
+    </div>
+    <script data-main="/public/js/app/order/index" src="/public/js/lib/require.js"></script>
+  </body>
+</html>

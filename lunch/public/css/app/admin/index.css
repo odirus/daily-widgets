@@ -1,0 +1,40 @@
+.main-content {
+    margin: 100px auto auto auto;
+}
+
+.welcome-box {
+    font-size: 14px;
+    margin: 20px auto
+}
+
+.menu-input-box {
+    margin: 20px 0px
+}
+
+.menu-input-item {
+    margin: 3px 0px
+}
+
+.menu-input-item-template {
+    display: none
+}
+
+.all-users-order {
+    margin: 30px 0px
+}
+
+.all-users-order-list {
+    table-layout：fixed
+}
+
+.all-users-order-list td {
+    word-break: break-all
+}
+
+.all-users-order-item-template {
+    display: none
+}
+
+.all-users-order-item-user-list {
+    width: 60%
+}

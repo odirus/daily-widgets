@@ -1,0 +1,6 @@
+* 可订餐的菜单 lunch:available:menu 哈希结构
+{foodId => name,price}
+* 用户列表 lunch:user:list 集合 需要去除重复的
+{userid, userid, userid}
+* 用户订餐信息 lunch:user:order:username 哈希结构
+{foodId => count}
