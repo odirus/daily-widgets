@@ -61,6 +61,7 @@ serverInitEmitter.on('initServer', function() {
     app.delete('/order/userOrder', cOrder.userOrder_DELETE);
     app.get('/admin', cAdmin.index);
     app.post('/admin/updateMenu', cAdmin.updateMenu_POST);
+    app.get('/admin/allUserOrder', cAdmin.allUserOrder_GET);
     
     app.listen(config.LUNCH_SERVER_LISTEN_PORT);
 });

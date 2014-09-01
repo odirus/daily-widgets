@@ -18,28 +18,7 @@
 	    Hi, <a class="welcome-change-username var-username" href="#">loding</a>
 	  </div>
 	  <div>
-	    你的订单（已经提交到服务器的订单）
-	    <table class="table table-striped user-order">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>菜名</th>
-                  <th>单价</th>
-                  <th>数量</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="user-order-item-template">
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-	  </div>
-	  <div>
-	    可选订餐（服务器上可选的菜单）
+	    可选订餐
 	    <table class="table table-striped available-menu">
               <thead>
                 <tr>
@@ -60,7 +39,28 @@
             </table>
 	  </div>
 	  <div>
-	    购物车（尚未提交到服务器的订单）
+	    我的订单（已经提交给管理员）
+	    <table class="table table-striped user-order">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>菜名</th>
+                  <th>单价</th>
+                  <th>数量</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="user-order-item-template">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+	  </div>
+	  <div>
+	    我的购物车（已经保存在本地，尚未提交给管理员）
 	    <table class="table table-striped user-shopping-cart">
               <thead>
                 <tr>
@@ -83,6 +83,7 @@
 	  <div class="submit-box">
 	    <button type="button" class="btn-block submit-order">把购物车的订单提交到服务器</button>
 	    <button type="button" class="btn-block cancel-order">从服务器上取消我的全部订单</button>
+            <button type="button" class="btn-block clear-shopping-cart">从本地删除购物车中的全部订单</button>
           </div>
 	</div>
 	<!--右侧区域-->

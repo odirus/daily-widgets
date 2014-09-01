@@ -22,6 +22,8 @@ require(['../../common'], function(common) {
 
 //用户名
 var localUsername;
+//可用订单
+var availableMenu;
 //生成修改用户名的控件
 var generateChangeUsernameControl = function($) {
     $('.welcome-change-username').click(function() {
@@ -50,6 +52,9 @@ var loadAndWriteUsername = function($) {
     }
     $('.var-username').text(username);
     localUsername = username;
+    //刷新用户订单和购物车
+    loadAndWriteUserOrder($, availableMenu);
+    loadSubmitShoppingCart($, availableMenu);
 };
 //加载用户订单
 var loadAndWriteUserOrder = function($, availableMenu) {
@@ -89,6 +94,7 @@ var loadAndWriteAvailableMenu = function($) {
 	dataType: "json",
 	success: function(data, textStatus, jqXHR) {
 	    if (textStatus === 'success') {
+		availableMenu = data;
 		writeAvailableMenu($, data);
 	    }
 	}
@@ -114,8 +120,10 @@ var writeAvailableMenu = function($, availableMenu) {
     loadAndWriteShoppingCart($, availableMenu);
     //加载提交购物车按钮
     loadSubmitShoppingCart($, availableMenu, localUsername);
+    //加载取消购物车按钮
+    loadClearShoppingCart($, availableMenu);
     //加载取消订单按钮
-    loadCancelShoppingCart($);
+    loadCancelOrder($);
 };
 //加载购物按钮
 var loadOrderClick = function($, availableMenu) {
@@ -176,7 +184,7 @@ var loadSubmitShoppingCart = function($, availableMenu) {
 	    success: function(data, textStatus, jqXHR) {
 		if (textStatus === 'success') {
 		    //清理本地信息
-		    clearShoppingCart($, availableMenu, localUsername);
+		    clearShoppingCart($, availableMenu);
 		    //刷新订单信息
 		    loadAndWriteUserOrder($, availableMenu, localUsername);
 		}
@@ -184,8 +192,23 @@ var loadSubmitShoppingCart = function($, availableMenu) {
 	});
     });
 };
-//加载取消按钮
-var loadCancelShoppingCart = function($, availableMenu) {
+var loadClearShoppingCart = function($, availableMenu) {
+    $('.clear-shopping-cart').click(function() {
+	clearShoppingCart($, availableMenu);
+    });
+};
+//删除本地的存储信息
+var clearShoppingCart = function($, availableMenu) {
+    var shoppingCart = {};
+    
+    for (var index in availableMenu) {
+	localStorage.removeItem('lunch-food-' + index);
+    }
+    //加载购物车
+    loadAndWriteShoppingCart($, availableMenu, localUsername);
+};
+//加载取消订单按钮
+var loadCancelOrder = function($, availableMenu) {
     $('.cancel-order').click(function() {
 	//提交信息到服务器
 	$.ajax({
@@ -199,16 +222,6 @@ var loadCancelShoppingCart = function($, availableMenu) {
 	    }
 	});
     });
-};
-//删除本地的存储信息
-var clearShoppingCart = function($, availableMenu) {
-    var shoppingCart = {};
-    
-    for (var index in availableMenu) {
-	localStorage.removeItem('lunch-food-' + index);
-    }
-    //加载购物车
-    loadAndWriteShoppingCart($, availableMenu, localUsername);
 };
 //计算对象自有属性数量
 function countObjProperties(obj) {

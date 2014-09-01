@@ -7,15 +7,19 @@
     margin: 20px auto
 }
 
-.menu-input-box {
+div#zdm-scheme div.menu-input-box {
     margin: 20px 0px
 }
 
-.menu-input-item {
+div#manual-scheme div.menu-input-box {
+    margin: 20px 0px
+}
+
+div#manual-scheme div.menu-input-item {
     margin: 3px 0px
 }
 
-.menu-input-item-template {
+div#manual-scheme div.menu-input-item-template {
     display: none
 }
 

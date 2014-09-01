@@ -17,31 +17,45 @@
           <div class="welcome-box">
 	    感谢管理员的辛勤劳动。如果你不是管理员，请勿操作，否则你想看我们饿肚子吗？
           </div>
-	  <p>在此处添加菜单（编号和价格只支持数字）</p>
-	  <hr />
-          <div class="menu-input-box">
-	    <div class="row menu-input-item-template">
-	      <div class="col-xs-3">
-		<input type="text" class="form-control item" placeholder="编号">
+	  <ul class="nav nav-tabs" id="scheme-tabs" roles="tablist">
+            <li role="presentation" class="active"><a href="#zdm-scheme">曾大妈方案</a></li>
+            <li role="presentation" class=""><a href="#manual-scheme">手动录入方案</a></li>
+          </ul>
+          <div class="tab-content input-schemes">
+            <div class="tab-pane active" id="zdm-scheme">
+              <div class="menu-input-box">
+		<textarea class="form-control" rows="10" placeholder="请将曾大妈的订餐信息原样复制到这里，切勿做任何处理"></textarea>
+              </div>
+	       <div class="button-collection">
+		 <button type="button" class="btn btn-default btn-block menu-input-submit">提交给服务器进行解析</button>
+               </div>
+            </div>
+            <div class="tab-pane" id="manual-scheme">
+              <div class="menu-input-box">
+		<div class="row menu-input-item-template">
+		  <div class="col-xs-3">
+		    <input type="text" class="form-control item" placeholder="编号">
+		  </div>
+		  <div class="col-xs-4">
+		    <input type="text" class="form-control item" placeholder="菜名">
+		  </div>
+		  <div class="col-xs-5">
+		    <input type="text" class="form-control item" placeholder="价格">
+		  </div>
+		</div>
 	      </div>
-	      <div class="col-xs-4">
-		<input type="text" class="form-control item" placeholder="菜名">
-	      </div>
-	      <div class="col-xs-5">
-		<input type="text" class="form-control item" placeholder="价格">
-	      </div>
+              <div class="button-collection">
+		<button type="button" class="btn btn-default btn-block menu-input-add">添加一种菜肴</button>
+		<button type="button" class="btn btn-default btn-block menu-input-submit">提交当前菜单</button>
+              </div>
 	    </div>
-	  </div>
-          <div class="button-collection">
-	    <button type="button" class="btn btn-default btn-block menu-input-add">添加一种菜肴</button>
-	    <button type="button" class="btn btn-default btn-block menu-input-submit">提交当前菜单</button>
           </div>
 	  <div class="all-users-order">
 	    所有用户的订单信息
 	    <table class="table table-striped all-users-order-list">
               <thead>
 		<tr>
-                  <th>#</th>
+                  <th>编号</th>
                   <th>数量</th>
                   <th>价格</th>
                   <th>订单详情</th>
